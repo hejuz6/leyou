@@ -10,17 +10,17 @@ import org.springframework.util.CollectionUtils;
 import java.util.List;
 
 @Service
-public class CatagoryService {
+public class CategoryService {
 
     @Autowired
     private CategoryMapper categoryMapper;
 
-    public List<Category> queryCatagoryListByPid(Long pid) {
+    public List<Category> queryCategoryListByPid(Long pid) {
         Category t = new Category();
         t.setParentId(pid);
         List<Category> list = categoryMapper.select(t);
         if (CollectionUtils.isEmpty(list)) {
-            throw new LyException(ExceptionEnum.CATEGORY_NOT_FOND);
+            throw new LyException(ExceptionEnum.CATEGORY_NOT_FOUND);
         }
         return list;
     }

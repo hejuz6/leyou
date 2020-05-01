@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("catagory")
-public class CatagoryController {
+@RequestMapping("category")
+public class CategoryController {
     @Autowired
-    private CategoryService catagoryService;
+    private CategoryService categoryService;
 
     @GetMapping("list")
     public ResponseEntity<List<Category>> queryCatagoryList(@RequestParam("pid") Long pid) {
 
-        return ResponseEntity.ok(catagoryService.queryCatagoryListByPid(pid));
+        return ResponseEntity.ok(categoryService.queryCategoryListByPid(pid));
     }
 }
