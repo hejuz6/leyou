@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public enum  ExceptionEnum {
     CATEGORY_NOT_FOUND(404, "商品分类未查到!"),
-    BRAND_NOT_FOUND(400, "品牌不存在!")
+    BRAND_NOT_FOUND(400, "品牌不存在!"),
+    SKU_NOT_FOUND(400,"商品不存在!"),
+    SPU_NOT_FOUND(400,"商品不存在!")
     ;
 
     private int code;
